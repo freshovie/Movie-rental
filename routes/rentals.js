@@ -11,7 +11,7 @@ Fawn.init(mongoose);
 
 // Get Customer
 router.get("/", async (req, res) => {
-  const rental = await Rental.find().sort({ dateout : -1 }); // Sort by date out descending
+  const rental = await Rental.find().sort({ dateout: -1 }); // Sort by date out descending
   res.send(rental);
 });
 
@@ -49,9 +49,8 @@ router.post("/", async (req, res) => {
     res.send(rental);
   } catch (ex) {
     res.status(500).send("Something failed.");
-  };
+  }
 });
 //
 
 module.exports = router;
-
